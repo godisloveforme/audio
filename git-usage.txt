@@ -1,0 +1,48 @@
+git 基本用法
+
+git clone git@github.com:shaoranwill/Acoustics_AI_DEV.git
+
+进入目录
+git branch   #显示现在在哪里branch
+git branch -a  # 显示所有的branch
+
+git checkout -b feature-extraction  remotes/origin/feature-extraction #checkout 远程feature-extraction branch到本地feature-extraction的目录
+
+git checkout master  #切换到master branch
+
+
+添加文件
+touch text.txt 
+git add text.txt
+git commit -m 'add text.txt file'
+git push 
+
+
+删除文件
+git rm text.txt
+git commit -m 'add text.txt file'
+git push 
+
+修改了文件
+git add text.txt
+git commit -m 'add text.txt file'
+git push 
+
+修改了文件text.txt, to discard change, 这种方法只是在本地修改，没有commit
+git checkout -- text.txt
+
+修改了文件text.txt, 而且commit了， 这个只是撤销了commit, 不撤销git add本地的修改没有变化，
+git reset --soft HEAD/<commit ID>
+
+git reset --hard HEAD/<commit ID> 撤销git commit，撤销git add，删除编辑器改动代码
+
+commit ID 可以通过 git log 查看
+
+
+强制origin/master覆盖到本地
+git reset --hard origin/master
+
+查看本地仓库和远程仓库关联
+git branch -vv
+
+
